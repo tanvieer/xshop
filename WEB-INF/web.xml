@@ -1,0 +1,87 @@
+<!--  <web-app>
+	 <servlet>
+			<servlet-name>CategoryAddServlet</servlet-name>
+			<servlet-class>xshop.app.CategoryAddServlet</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+			<servlet-name>CategoryAddServlet</servlet-name>
+			<url-pattern>/category-add</url-pattern>
+	  </servlet-mapping>
+   </web-app> 
+
+
+   <web-app>
+	 <servlet>
+			<servlet-name>CategoryListServlet</servlet-name>
+			<servlet-class>xshop.app.CategoryListServlet</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+			<servlet-name>CategoryListServlet</servlet-name>
+			<url-pattern>/category-list</url-pattern>
+	  </servlet-mapping>
+   </web-app> -->
+
+
+
+   <web-app>
+	 <servlet>
+			<servlet-name>CategoryAddServlet</servlet-name>
+			<servlet-class>xshop.app.CategoryAddServlet</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+			<servlet-name>CategoryAddServlet</servlet-name>
+			<url-pattern>/category-add</url-pattern>
+	  </servlet-mapping>
+
+
+	   <servlet>
+			<servlet-name>CategoryListServlet</servlet-name>
+			<servlet-class>xshop.app.CategoryListServlet</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+			<servlet-name>CategoryListServlet</servlet-name>
+			<url-pattern>/category-list</url-pattern>
+	  </servlet-mapping>
+
+
+	   <servlet>
+			<servlet-name>CategoryDeleteServlet</servlet-name>
+			<servlet-class>xshop.app.CategoryDeleteServlet</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+			<servlet-name>CategoryDeleteServlet</servlet-name>
+			<url-pattern>/category-delete</url-pattern>
+		</servlet-mapping>
+
+
+
+<!-- 
+
+   <servlet>
+    	<servlet-name>CategoryDeleteServlet</servlet-name>
+			<servlet-class>xshop.app.CategoryDeleteServlet</servlet-class>
+    <init-param><param-name>container.script.static</param-name>
+                <param-value>/WEB-INF/container.script</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+</servlet>
+
+
+	  -->
+
+
+
+
+
+	  <servlet>
+			<servlet-name>CategoryEditServlet</servlet-name>
+			<servlet-class>xshop.app.CategoryEditServlet</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+			<servlet-name>CategoryEditServlet</servlet-name>
+			<url-pattern>/category-edit</url-pattern>
+	  </servlet-mapping>
+
+
+
+   </web-app> 
