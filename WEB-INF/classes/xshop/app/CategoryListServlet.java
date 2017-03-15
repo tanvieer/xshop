@@ -42,7 +42,7 @@ public class CategoryListServlet extends HttpServlet{
 
 		  out.println("<form method='post'>");
 		  
-		 out.println("<table>");
+		 out.println("<table border='1'>");
 		  out.println("<tr>");
 		    out.println("<th>Category ID</th>");
 		    out.println("<th>Category Name</th>");

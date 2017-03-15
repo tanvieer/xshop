@@ -16,13 +16,10 @@ import java.util.List;
 public class ProductListServlet extends HttpServlet{
 	   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		  PrintWriter out = resp.getWriter();
-
-
 		  List<Product> ctList = new ProductService().getAll();
 
-
 		  out.println("<html>");
-		  out.println("<a href='product-add'>add Product</a>");
+		  out.println("<a href='product-add'>Add Product</a>");
 
 		  	out.println("<head>");
 			
@@ -31,7 +28,7 @@ public class ProductListServlet extends HttpServlet{
 		  out.println("<body>");
 		 
 		  
-		 out.println("<table>");
+		 out.println("<table border='1'>");
 		  out.println("<tr>");
 		    out.println("<th>Product ID</th>");
 		    out.println("<th>Product Name</th>");

@@ -16,7 +16,7 @@ public class ProductEditServlet extends HttpServlet{
       
         PrintWriter out=response.getWriter();  
         out.println("<h1>Update Product</h1>"); 
-        out.println("<a href='product-add'>Add product</a>"); 
+        out.println("<a href='product-add'>Add Product</a>"); 
         String cid=request.getParameter("id");  
         int id=Integer.parseInt(cid);  
          

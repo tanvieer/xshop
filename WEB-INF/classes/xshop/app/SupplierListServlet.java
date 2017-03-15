@@ -42,7 +42,7 @@ public class SupplierListServlet extends HttpServlet{
 
 		  out.println("<form method='post'>");
 		  
-		 out.println("<table>");
+		 out.println("<table border='1'>");
 		  out.println("<tr>");
 		    out.println("<th>Supplier ID</th>");
 		    out.println("<th>Supplier Name</th>");
