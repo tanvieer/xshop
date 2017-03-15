@@ -6,7 +6,7 @@ public  class Supplier{
     int id;
     String name;
     String contact;
-    List<Product> products;
+   // List<Product> products;
 	
 	//Implement Yourself
 
@@ -18,12 +18,17 @@ public  class Supplier{
 		this.name = name;
 		this.contact = contact;
 	}
+	public Supplier(int id, String name, String contact){
+		this.id = id;
+		this.name = name;
+		this.contact = contact;
+	}
 
-	public Supplier(String name, String contact,  List<Product> products){
+	/*public Supplier(String name, String contact,  List<Product> products){
 		this.name = name;
 		this.contact = contact;
 		this.products = products;
-	}
+	}*/
 
 	public String getName() {
 		return name;
@@ -40,14 +45,14 @@ public  class Supplier{
 	public void setContact(String contact) {
 		this.contact = contact;
 	}
-
+/*
 	public List<Product> getProducts() {
 		return products;
 	}
 
 	public void setProducts(List<Product> products) {
 		this.products = products;
-	}
+	}*/
 
 	public int getId() {
 		return id;

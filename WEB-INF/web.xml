@@ -54,25 +54,6 @@
 		</servlet-mapping>
 
 
-
-<!-- 
-
-   <servlet>
-    	<servlet-name>CategoryDeleteServlet</servlet-name>
-			<servlet-class>xshop.app.CategoryDeleteServlet</servlet-class>
-    <init-param><param-name>container.script.static</param-name>
-                <param-value>/WEB-INF/container.script</param-value>
-    </init-param>
-    <load-on-startup>1</load-on-startup>
-</servlet>
-
-
-	  -->
-
-
-
-
-
 	  <servlet>
 			<servlet-name>CategoryEditServlet</servlet-name>
 			<servlet-class>xshop.app.CategoryEditServlet</servlet-class>
@@ -81,6 +62,67 @@
 			<servlet-name>CategoryEditServlet</servlet-name>
 			<url-pattern>/category-edit</url-pattern>
 	  </servlet-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	  <servlet>
+			<servlet-name>SupplierAddServlet</servlet-name>
+			<servlet-class>xshop.app.SupplierAddServlet</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+			<servlet-name>SupplierAddServlet</servlet-name>
+			<url-pattern>/supplier-add</url-pattern>
+	  </servlet-mapping>
+
+	   
+
+
+
+
+
+	   <servlet>
+			<servlet-name>SupplierEditServlet</servlet-name>
+			<servlet-class>xshop.app.SupplierEditServlet</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+			<servlet-name>SupplierEditServlet</servlet-name>
+			<url-pattern>/supplier-edit</url-pattern>
+	  </servlet-mapping>
+	  
+
+
+	  
+	  <servlet>
+			<servlet-name>SupplierListServlet</servlet-name>
+			<servlet-class>xshop.app.SupplierListServlet</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+			<servlet-name>SupplierListServlet</servlet-name>
+			<url-pattern>/supplier-list</url-pattern>
+	  </servlet-mapping>
+
+
+	   <servlet>
+			<servlet-name>SupplierDeleteServlet</servlet-name>
+			<servlet-class>xshop.app.SupplierDeleteServlet</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+			<servlet-name>SupplierDeleteServlet</servlet-name>
+			<url-pattern>/supplier-delete</url-pattern>
+		</servlet-mapping>
+
 
 
 
