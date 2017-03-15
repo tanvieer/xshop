@@ -17,6 +17,6 @@ public class ProductDeleteServlet extends HttpServlet{
         int id=Integer.parseInt(cid);  
         ProductService cs= new ProductService();
         cs.remove(id);  
-        response.sendRedirect("list-product");  
+        response.sendRedirect("product-list");  
     }  
 }

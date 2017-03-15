@@ -22,7 +22,7 @@ public class ProductListServlet extends HttpServlet{
 
 
 		  out.println("<html>");
-		  out.println("<a href='add-product'>add Product</a>");
+		  out.println("<a href='product-add'>add Product</a>");
 
 		  	out.println("<head>");
 			
@@ -58,8 +58,8 @@ public class ProductListServlet extends HttpServlet{
 		    out.println("<td>"+ct.getCategoryId()+"</td>");
 		    out.println("<td>"+ct.getSupplierId()+"</td>");
 
-		    out.println("<td><a href='delete-product?id="+ct.getId()+"'>Delete</a></td>");
-		    out.println("<td><a href='edit-product?id="+ct.getId()+"'>Edit</a></td>");
+		    out.println("<td><a href='product-delete?id="+ct.getId()+"'>Delete</a></td>");
+		    out.println("<td><a href='product-edit?id="+ct.getId()+"'>Edit</a></td>");
 
 		 	out.println("</tr>");
 		}
@@ -88,5 +88,3 @@ public class ProductListServlet extends HttpServlet{
 }
 
 
-
-//out.print("<tr><td>"+e.getId()+"</td><td>"+e.getName()+"</td><td>"+e.getPassword()+"</td><td>"+e.getEmail()+"</td><td>"+e.getCountry()+"</td><td><a href='EditServlet?id="+e.getId()+"'>edit</a></td><td><a href='DeleteServlet?id="+e.getId()+"'>delete</a></td></tr>");

@@ -57,7 +57,6 @@ public class Product{
     }
       
 	public Product(int id, String name, int stock, double buyingPrice, double sellingPrice, boolean status,int categoryId, int supplierId) {
-       
         this.id=id;
         this.name = name;
         this.stock = stock;
@@ -66,7 +65,19 @@ public class Product{
         this.status = status;
 		this.categoryId=categoryId;
 		this.supplierId=supplierId;
-    }	  
+    }	
+
+
+    public Product(int id, String name, int stock, double buyingPrice, double sellingPrice, int categoryId, int supplierId) {
+        this.id=id;
+        this.name = name;
+        this.stock = stock;
+        this.buyingPrice = buyingPrice;
+        this.sellingPrice = sellingPrice;
+        //this.status = status;
+        this.categoryId=categoryId;
+        this.supplierId=supplierId;
+    }     
         
       
         

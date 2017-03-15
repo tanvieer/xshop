@@ -16,7 +16,7 @@ public class ProductEditServlet extends HttpServlet{
       
         PrintWriter out=response.getWriter();  
         out.println("<h1>Update Product</h1>"); 
-        out.println("<a href='add-product'>Add a product</a>"); 
+        out.println("<a href='product-add'>Add product</a>"); 
         String cid=request.getParameter("id");  
         int id=Integer.parseInt(cid);  
          
@@ -24,13 +24,12 @@ public class ProductEditServlet extends HttpServlet{
         Product ptedit= ct.getById(id);
 
         
-         System.out.println(ptedit);
 
         out.print("<form  method='post'>");  
         out.print("<table>");  
         out.print("<tr><td></td><td><input type='hidden' name='id' value='"+ptedit.getId()+"'/></td></tr>");  
         out.print("<tr><td>Name:</td><td><input type='text' name='name' value='"+ptedit.getName()+"'/></td></tr>");
-        System.out.println(ptedit.getName());  
+        //System.out.println(ptedit.getName());  
         out.print("<tr><td>Name:</td><td><input type='text' name='name' value='"+ptedit.getStock()+"'/></td></tr>");
         out.print("<tr><td>Name:</td><td><input type='text' name='name' value='"+ptedit.getBuyingPrice()+"'/></td></tr>");
         out.print("<tr><td>Name:</td><td><input type='text' name='name' value='"+ptedit.getSellingPrice()+"'/></td></tr>");
@@ -51,7 +50,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
         Product product =  new Product(Integer.parseInt(req.getParameter("id")),req.getParameter("name"),Integer.parseInt(req.getParameter("stock")),Float.parseFloat(req.getParameter("buying_Price")),Float.parseFloat(req.getParameter("Selling_price")),Boolean.parseBoolean(req.getParameter("status")),Integer.parseInt(req.getParameter("category_id")),Integer.parseInt(req.getParameter("supplier_id")));  
       
         new ProductService().edit(product);
-        resp.sendRedirect("list-product"); 
+        resp.sendRedirect("product-list"); 
         
       }
 

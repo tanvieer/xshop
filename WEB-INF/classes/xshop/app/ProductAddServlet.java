@@ -29,12 +29,12 @@ public class ProductAddServlet extends HttpServlet{
 		  out.println("</form>");
 		  out.println("</body>");
 		  out.println("</html>");
-		  out.println("<a href='list-product'>Show Product List</a>");
+		  out.println("<a href='product-list'>Show Product List</a>");
 	  }
 	  protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		Product product = new Product(req.getParameter("name"),Integer.parseInt(req.getParameter("stock")),Float.parseFloat(req.getParameter("buying_Price")),Float.parseFloat(req.getParameter("Selling_price")),Boolean.parseBoolean(req.getParameter("status")),Integer.parseInt(req.getParameter("category_id")),Integer.parseInt(req.getParameter("supplier_id")));  
                 new ProductService().add(product);
-                resp.sendRedirect("list-product"); 
+                resp.sendRedirect("product-list"); 
 	  }
 
 }

@@ -126,4 +126,42 @@
 
 
 
+		<servlet>
+			<servlet-name>ProductListServlet</servlet-name>
+			<servlet-class>xshop.app.ProductListServlet</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+			<servlet-name>ProductListServlet</servlet-name>
+			<url-pattern>/product-list</url-pattern>
+		</servlet-mapping>
+
+			<servlet>
+			<servlet-name>ProductAddServlet</servlet-name>
+			<servlet-class>xshop.app.ProductAddServlet</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+			<servlet-name>ProductAddServlet</servlet-name>
+			<url-pattern>/product-add</url-pattern>
+		</servlet-mapping>
+
+			<servlet>
+			<servlet-name>ProductDeleteServlet</servlet-name>
+			<servlet-class>xshop.app.ProductDeleteServlet</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+			<servlet-name>ProductDeleteServlet</servlet-name>
+			<url-pattern>/product-delete</url-pattern>
+		</servlet-mapping>
+			<servlet>
+			<servlet-name>ProductEditServlet</servlet-name>
+			<servlet-class>xshop.app.ProductEditServlet</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+			<servlet-name>ProductEditServlet</servlet-name>
+			<url-pattern>/product-edit</url-pattern>
+		</servlet-mapping>
+
+
+
+
    </web-app> 

@@ -121,19 +121,33 @@ public class ProductRepository {
             Connection con = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/xshopdb", "root", "");
 
-            PreparedStatement stmt = con.prepareStatement("SELECT * From product where id = "+productId );
+            PreparedStatement stmt = con.prepareStatement("SELECT Id, Name, stock,buying_price,selling_price,status,category_id,supplier_id FROM Product where id = "+productId );
             ResultSet rs = stmt.executeQuery();
-System.out.println("test");
-            
-            while(rs.next()) {
-                System.out.println("test1");
-                double bp = rs.getDouble("buying_price");
-                double sp = rs.getDouble("selling_price");
-                System.out.println(rs.getDouble("selling_price"));
-                product = new Product(rs.getInt("Id"), rs.getString("Name"), rs.getInt("stock"),bp, sp, rs.getBoolean("status") , rs.getInt("catagory_id"), rs.getInt("supplier_id"));
-            System.out.println("test2");
-            System.out.println(rs.getInt("Id"));
-            break;
+
+            System.out.println(productId);
+            if (rs.next()) {
+              
+
+                int p_id = rs.getInt("Id");
+                String p_name = rs.getString("Name");
+                int p_stock = rs.getInt("stock");
+                double p_bp = rs.getDouble("buying_price");
+                double p_sp = rs.getDouble("selling_price");
+
+                boolean p_status = rs.getBoolean("status");
+                System.out.println("paise1");
+                int c_id = rs.getInt("category_id");
+                System.out.println("paise2");
+                int s_id = rs.getInt("supplier_id");
+                System.out.println("paise3");
+                
+
+
+System.out.println("id="+p_id+ " nam="+p_name+ " stock="+p_stock+ " bp="+p_bp+ " sp="+p_sp+ " sts="+p_status+ " cid="+c_id+ " sid="+s_id);
+                product = new Product(p_id,p_name,p_stock,p_bp,p_sp,p_status,c_id,s_id);
+                System.out.println("done");
+
+
             }
             con.close();
 
