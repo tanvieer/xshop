@@ -25,29 +25,39 @@ public class ProductEditServlet extends HttpServlet{
 
         
 
-        out.print("<form  method='post'>");  
-        out.print("<table>");  
-        out.print("<tr><td></td><td><input type='hidden' name='id' value='"+ptedit.getId()+"'/></td></tr>");  
-        out.print("<tr><td>Name:</td><td><input type='text' name='name' value='"+ptedit.getName()+"'/></td></tr>");  
-        out.print("<tr><td>Stock:</td><td><input type='text' name='stock' value='"+ptedit.getStock()+"'/></td></tr>");
-        out.print("<tr><td>Buying Price:</td><td><input type='text' name='buying_Price' value='"+ptedit.getBuyingPrice()+"'/></td></tr>");
-        out.print("<tr><td>Selling Price:</td><td><input type='text' name='selling_price' value='"+ptedit.getSellingPrice()+"'/></td></tr>");
-        out.print("<tr><td>Status:</td><td><input type='text' name='status' value='"+ptedit.isStatus()+"'/></td></tr>");
-        out.print("<tr><td>Category:</td><td><input type='text' name='category_id' value='"+ptedit.getCategoryId()+"'/></td></tr>");
-        out.print("<tr><td>Supplier:</td><td><input type='text' name='supplier_id' value='"+ptedit.getSupplierId()+"'/></td></tr>");
+        out.println("<form  method='post'>");  
+        out.println("<table>");  
+        out.println("<tr><td></td><td><input type='hidden' name='id' value='"+ptedit.getId()+"'/></td></tr>");  
+        out.println("<tr><td>Name:</td><td><input type='text' name='name' value='"+ptedit.getName()+"'/></td></tr>");  
+        out.println("<tr><td>Stock:</td><td><input type='text' name='stock' value='"+ptedit.getStock()+"'/></td></tr>");
+        out.println("<tr><td>Buying Price:</td><td><input type='text' name='buying_Price' value='"+ptedit.getBuyingPrice()+"'/></td></tr>");
+        out.println("<tr><td>Selling Price:</td><td><input type='text' name='selling_price' value='"+ptedit.getSellingPrice()+"'/></td></tr>");
+        out.println("<tr><td>Status:</td><td><select name='status'><option value='1'>Available</option><option value='0'>Not Available</option></select></td></tr>");
+        out.println("<tr><td>Category:</td><td><input type='text' name='category_id' value='"+ptedit.getCategoryId()+"'/></td></tr>");
+        out.println("<tr><td>Supplier:</td><td><input type='text' name='supplier_id' value='"+ptedit.getSupplierId()+"'/></td></tr>");
 
-        out.print("</td></tr>");  
+        out.println("</td></tr>");  
 
-        out.print("<tr><td colspan='2'><input type='submit' value='Confirm Edit'/></td></tr>");  
-        out.print("</table>");  
-        out.print("</form>");  
+        out.println("<tr><td colspan='2'><input type='submit' value='Confirm Edit'/></td></tr>");  
+        out.println("</table>");  
+        out.println("</form>");  
        
           
          
 }
 protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-        Product product =  new Product(Integer.parseInt(req.getParameter("id")),req.getParameter("name"),Integer.parseInt(req.getParameter("stock")),Float.parseFloat(req.getParameter("buying_Price")),Float.parseFloat(req.getParameter("selling_price")),Boolean.parseBoolean(req.getParameter("status")),Integer.parseInt(req.getParameter("category_id")),Integer.parseInt(req.getParameter("supplier_id")));  
+    boolean sts;
+    int temp = Integer.parseInt(req.getParameter("status"));
+    if(temp == 1) sts = true;
+    else sts = false;
+
+    Product product =  new Product(Integer.parseInt(req.getParameter("id")),req.getParameter("name"),Integer.parseInt(req.getParameter("stock")),Float.parseFloat(req.getParameter("buying_Price")),Float.parseFloat(req.getParameter("selling_price")),sts,Integer.parseInt(req.getParameter("category_id")),Integer.parseInt(req.getParameter("supplier_id")));  
       
+
+ /*PrintWriter out=resp.getWriter();  
+ out.println(req.getParameter("status"));
+ out.println(sts);*/
+
         new ProductService().edit(product);
         resp.sendRedirect("product-list"); 
         

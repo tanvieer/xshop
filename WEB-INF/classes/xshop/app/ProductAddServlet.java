@@ -8,7 +8,9 @@ import java.io.PrintWriter;
 import java.io.IOException;
 
 import xshop.entity.Product;
+import xshop.entity.Category;
 import xshop.core.ProductService;
+import xshop.core.CategoryService;
 
 public class ProductAddServlet extends HttpServlet{
 	  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
