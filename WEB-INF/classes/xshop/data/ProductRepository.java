@@ -22,7 +22,7 @@ public class ProductRepository {
             stmt.setInt(2, product.getStock());
             stmt.setDouble(3, product.getBuyingPrice());
             stmt.setDouble(4, product.getSellingPrice());
-            stmt.setBoolean(5, true);
+            stmt.setBoolean(5, product.isStatus());
             stmt.setInt(6, product.getCategoryId());
             stmt.setInt(7, product.getSupplierId());
 
