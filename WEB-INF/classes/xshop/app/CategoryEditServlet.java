@@ -20,6 +20,7 @@ public class CategoryEditServlet extends HttpServlet{
 		  PrintWriter out = resp.getWriter();
 		  out.println("<html>");
 		  out.println("<body>");
+out.println("<a href='home'> HOME </a>");
 out.println("<a href='category-list'>Show ALL</a>");
 out.println("<a href='category-add'>Add New</a>");
 

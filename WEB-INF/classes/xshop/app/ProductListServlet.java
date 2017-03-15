@@ -19,7 +19,8 @@ public class ProductListServlet extends HttpServlet{
 		  List<Product> ctList = new ProductService().getAll();
 
 		  out.println("<html>");
-		  out.println("<a href='product-add'>Add Product</a>");
+out.println("<a href='home'> HOME </a>");
+out.println("<a href='product-add'>Add Product</a>");
 
 		  	out.println("<head>");
 			

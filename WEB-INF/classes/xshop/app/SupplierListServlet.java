@@ -37,8 +37,8 @@ public class SupplierListServlet extends HttpServlet{
 			out.println("</head>");
 
 		  out.println("<body>");
-
-		out.println("<a href='supplier-add'>Add New Supplier</a>");
+out.println("<a href='home'> HOME </a>");
+out.println("<a href='supplier-add'>Add New Supplier</a>");
 
 		  out.println("<form method='post'>");
 		  

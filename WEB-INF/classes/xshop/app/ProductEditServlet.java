@@ -14,7 +14,9 @@ public class ProductEditServlet extends HttpServlet{
 	 protected void doGet(HttpServletRequest request, HttpServletResponse response)   
            throws ServletException, IOException {  
       
-        PrintWriter out=response.getWriter();  
+        PrintWriter out=response.getWriter();
+
+out.println("<a href='home'> HOME </a></br>");  
         out.println("<h1>Update Product</h1>"); 
         out.println("<a href='product-add'>Add Product</a>"); 
         String cid=request.getParameter("id");  
@@ -34,6 +36,8 @@ public class ProductEditServlet extends HttpServlet{
         out.println("<tr><td>Selling Price:</td><td><input type='text' name='selling_price' value='"+ptedit.getSellingPrice()+"'/></td></tr>");
         out.println("<tr><td>Status:</td><td><select name='status'><option value='1'>Available</option><option value='0'>Not Available</option></select></td></tr>");
         out.println("<tr><td>Category:</td><td><input type='text' name='category_id' value='"+ptedit.getCategoryId()+"'/></td></tr>");
+        
+
         out.println("<tr><td>Supplier:</td><td><input type='text' name='supplier_id' value='"+ptedit.getSupplierId()+"'/></td></tr>");
 
         out.println("</td></tr>");  

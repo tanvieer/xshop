@@ -15,7 +15,8 @@ public class SupplierAddServlet extends HttpServlet{
 		  PrintWriter out = resp.getWriter();
 		  out.println("<html>");
 		  out.println("<body>");
-		out.println("<a href='supplier-list'>Show ALL Supplier</a>");
+out.println("<a href='home'> HOME </a>");
+out.println("<a href='supplier-list'>Show ALL Supplier</a>");
 		  out.println("<form method='post'>");
 		  out.println("Supplier Name:<br/><input name='name' /><br/>");
 		  out.println("Supplier Contact:<br/><input name='contact' /><br/>");

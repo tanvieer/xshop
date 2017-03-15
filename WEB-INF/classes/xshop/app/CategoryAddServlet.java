@@ -15,6 +15,7 @@ public class CategoryAddServlet extends HttpServlet{
 		  PrintWriter out = resp.getWriter();
 		  out.println("<html>");
 		  out.println("<body>");
+		out.println("<a href='home'> HOME </a>");
 		out.println("<a href='category-list'>Show ALL Category</a>");
 		  out.println("<form method='post'>");
 		  out.println("Category Name:<br/><input name='name' /><br/>");

@@ -37,7 +37,7 @@ public class CategoryListServlet extends HttpServlet{
 			out.println("</head>");
 
 		  out.println("<body>");
-
+out.println("<a href='home'> HOME </a>");
 		out.println("<a href='category-add'>Add New Category</a>");
 
 		  out.println("<form method='post'>");
