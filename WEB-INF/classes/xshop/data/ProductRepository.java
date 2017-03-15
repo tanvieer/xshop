@@ -121,12 +121,19 @@ public class ProductRepository {
             Connection con = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/xshopdb", "root", "");
 
-            PreparedStatement stmt = con.prepareStatement("SELECT Id, Name, stock,buying_price,selling_price,status,category_id FROM Product where id = "+productId );
+            PreparedStatement stmt = con.prepareStatement("SELECT * From product where id = "+productId );
             ResultSet rs = stmt.executeQuery();
-
+System.out.println("test");
             
-            if (rs.next()) {
-                 product = new Product(rs.getInt("Id"), rs.getString("Name"), rs.getInt("stock"), rs.getInt("buying_price"), rs.getInt("selling_price"), rs.getBoolean("status") , rs.getInt("catagory_id"), rs.getInt("supplier_id"));
+            while(rs.next()) {
+                System.out.println("test1");
+                double bp = rs.getDouble("buying_price");
+                double sp = rs.getDouble("selling_price");
+                System.out.println(rs.getDouble("selling_price"));
+                product = new Product(rs.getInt("Id"), rs.getString("Name"), rs.getInt("stock"),bp, sp, rs.getBoolean("status") , rs.getInt("catagory_id"), rs.getInt("supplier_id"));
+            System.out.println("test2");
+            System.out.println(rs.getInt("Id"));
+            break;
             }
             con.close();
 

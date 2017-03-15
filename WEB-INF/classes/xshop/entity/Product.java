@@ -57,6 +57,7 @@ public class Product{
     }
       
 	public Product(int id, String name, int stock, double buyingPrice, double sellingPrice, boolean status,int categoryId, int supplierId) {
+       
         this.id=id;
         this.name = name;
         this.stock = stock;
