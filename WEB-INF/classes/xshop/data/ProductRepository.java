@@ -124,7 +124,7 @@ public class ProductRepository {
             PreparedStatement stmt = con.prepareStatement("SELECT Id, Name, stock,buying_price,selling_price,status,category_id,supplier_id FROM Product where id = "+productId );
             ResultSet rs = stmt.executeQuery();
 
-            System.out.println(productId);
+            //System.out.println(productId);
             if (rs.next()) {
               
 
@@ -135,17 +135,17 @@ public class ProductRepository {
                 double p_sp = rs.getDouble("selling_price");
 
                 boolean p_status = rs.getBoolean("status");
-                System.out.println("paise1");
+               // System.out.println("paise1");
                 int c_id = rs.getInt("category_id");
-                System.out.println("paise2");
+               // System.out.println("paise2");
                 int s_id = rs.getInt("supplier_id");
-                System.out.println("paise3");
+                //System.out.println("paise3");
                 
 
 
-System.out.println("id="+p_id+ " nam="+p_name+ " stock="+p_stock+ " bp="+p_bp+ " sp="+p_sp+ " sts="+p_status+ " cid="+c_id+ " sid="+s_id);
+//System.out.println("id="+p_id+ " nam="+p_name+ " stock="+p_stock+ " bp="+p_bp+ " sp="+p_sp+ " sts="+p_status+ " cid="+c_id+ " sid="+s_id);
                 product = new Product(p_id,p_name,p_stock,p_bp,p_sp,p_status,c_id,s_id);
-                System.out.println("done");
+                //System.out.println("done");
 
 
             }
