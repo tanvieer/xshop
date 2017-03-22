@@ -11,9 +11,12 @@ public class LogoutServlet extends HttpServlet{
             if (session != null) {
                 session.invalidate();
                 out.println("Successfully logged out");
+
+                resp.sendRedirect("user-login");
             }
             else {
                 out.println("Already Empty Session");
+                resp.sendRedirect("user-login");
             }
 		 
 	  }

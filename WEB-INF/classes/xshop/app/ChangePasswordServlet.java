@@ -1,3 +1,4 @@
+package xshop.app;
 import java.io.*;  
 import javax.servlet.*;  
 import javax.servlet.http.*;  
@@ -14,7 +15,7 @@ public class ChangePasswordServlet extends HttpServlet{
 
 	  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 
-	  	System.out.println("dhukse");  
+
 	  	PrintWriter out = resp.getWriter();
 
         try{  
@@ -43,13 +44,12 @@ public class ChangePasswordServlet extends HttpServlet{
                 out.println("<html>");
 		  out.println("<body>");
 out.println("<a href='home'> HOME </a>");
-out.println("<a href='user-list'>Show ALL</a>");
-out.println("<a href='user-add'>Add New</a>");
+out.println("<h1>Change Password</h1>");
 
 		  out.println("<form method='post'>");
 out.println("User ID:<br/><input name='uid' readonly value = "+db_userid+" /><br/>");
-		  out.println("User Password:<br/><input name='pass' value = "+db_pass+"/><br/>");
-		  out.println("User Name:<br/><input name='name' readonly value = "+db_name+"/><br/>");
+		  out.println("User Password:<br/><input value = "+db_pass+" name='pass' /><br/>");
+		  out.println("User Name:<br/><input name='name' value = "+db_name+" readonly /><br/>");
 		  out.println("User Type: "+db_type+"<br/>");
 
 		  out.println("<input type='submit' value='Update'/>");
@@ -79,10 +79,10 @@ out.println("User ID:<br/><input name='uid' readonly value = "+db_userid+" /><br
 	  }
 	  protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 			
-		String userid = req.getParameter("uid");
+		String userid = db_userid;
         String pass = req.getParameter("pass");
-        String name = req.getParameter("name");
-        String type = req.getParameter("type");
+        String name = db_name;
+        String type = db_type;
 
         System.out.println(userid);
         System.out.println(pass);
@@ -93,6 +93,37 @@ out.println("User ID:<br/><input name='uid' readonly value = "+db_userid+" /><br
         UserInfo user = new UserInfo(idd,userid,pass,name,type);  
                 System.out.println(new UserService().edit(user));
 
-                resp.sendRedirect("user-list");
-	  }
+
+
+
+
+
+
+		try{  
+           HttpSession session=req.getSession();  
+                session.setAttribute("password",pass);
+            }
+         catch(Exception e){System.out.println(e);} 
+
+
+         resp.sendRedirect("user-logout"); 
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+	  
 }
