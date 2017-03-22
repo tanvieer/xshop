@@ -170,4 +170,59 @@
 			<servlet-name>HomeServlet</servlet-name>
 			<url-pattern>/home</url-pattern>
 	  </servlet-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	  <servlet>
+			<servlet-name>UserAddServlet</servlet-name>
+			<servlet-class>xshop.app.UserAddServlet</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+			<servlet-name>UserAddServlet</servlet-name>
+			<url-pattern>/user-add</url-pattern>
+	  </servlet-mapping>
+
+	  <servlet>
+			<servlet-name>UserListServlet</servlet-name>
+			<servlet-class>xshop.app.UserListServlet</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+			<servlet-name>UserListServlet</servlet-name>
+			<url-pattern>/user-list</url-pattern>
+	  </servlet-mapping>
+
+	  <servlet>
+			<servlet-name>UserEditServlet</servlet-name>
+			<servlet-class>xshop.app.UserEditServlet</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+			<servlet-name>UserEditServlet</servlet-name>
+			<url-pattern>/user-edit</url-pattern>
+	  </servlet-mapping>
+
+
+
+
+
    </web-app> 
