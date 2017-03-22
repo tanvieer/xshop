@@ -41,17 +41,52 @@ public class UserProfileServlet extends HttpServlet{
 
 
 
-          out.println("<html>");
-		  out.println("<body>");
-		  out.println("<center>");
-out.println("<a href='home'> HOME </a></br><hr>");
+	out.println("<html>");
+	out.println("<body>");
+	out.println("<center>");
 
-out.println("User ID: <b>"+db_userid+"</b><br/>");
-		  out.println("User Password: <b>"+db_pass+"</b><br/>");
-		  out.println("User Name: <b>"+db_name+"</b><br/>");
-		  out.println("User Type: <b>"+db_type+"</b><br/>");
 
-		  out.println("</center>");
+out.println("<a href='home'> HOME </a>");
+out.println("<a href='user-logout'>Logout</a></br><hr>");
+
+out.println("<h1>User Profile</h1>");
+	out.println("<table>");
+
+	out.println("<tr>");
+	out.println("<td>User ID:</td>");
+	out.println("<td><b>"+db_userid+"</b></td>");
+	out.println("</tr>");
+
+	out.println("<tr>");
+	out.println("<td>User Password:</td>");
+	out.println("<td><b>"+db_pass+"</b></td>");
+
+	out.println("</tr>");
+
+	out.println("<tr>");
+	out.println("<td>User Name:</td>");
+	out.println("<td><b>"+db_name+"</b></td>");
+	out.println("</tr>");
+
+	out.println("<tr>");
+	out.println("<td>User Type:</td>");
+	out.println("<td><b>"+db_type+"</b></td>");
+	out.println("</tr>");
+
+	out.println("</table>");
+	out.println("</center>");
+
+
+
+
+
+
+
+
+
+
+
+
 		  out.println("</body>");
 		  out.println("</html>");
 
