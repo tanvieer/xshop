@@ -24,6 +24,10 @@ public class UserService{
         return repository.getById(userId);
     }
 
+    public UserInfo getByUserId(String userId){
+        return repository.getByUserId(userId);
+    }
+
 
   /*  
 

@@ -120,7 +120,43 @@ public class UserRepository {
     }
 
 
-       public UserInfo getById(int userId) {
+       public UserInfo getByUserId(String userId) {
+        UserInfo UserInfo = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/login", "root", "");
+
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM user WHERE userid ='"+userId+"'");
+            ResultSet rs = stmt.executeQuery();
+            UserInfo userinfo;
+
+            
+            if (rs.next()) {
+                int id = rs.getInt("id");
+                String uid = rs.getString("userid");
+
+                String pass = rs.getString("password");
+
+                String name =  rs.getString("name");
+
+                String type = rs.getString("usertype");
+
+                userinfo = new UserInfo(id, uid ,pass,name,type);
+                return userinfo;
+
+            }
+            con.close();
+
+        } catch (Exception e) {
+
+        }
+        return null;
+        
+    }
+
+
+     public UserInfo getById(int userId) {
         UserInfo UserInfo = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -154,7 +190,6 @@ public class UserRepository {
         return null;
         
     }
-
 
 
 

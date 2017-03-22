@@ -18,6 +18,7 @@ public class UserAddServlet extends HttpServlet{
 		  out.println("<body>");
 		out.println("<a href='home'> HOME </a>");
 		out.println("<a href='user-list'>Show ALL User</a>");
+                out.println("<h1>Registration</h1>");
 		  out.println("<form method='post'>");
 		  out.println("User ID:<br/><input name='uid' /><br/>");
 		  out.println("User Password:<br/><input name='pass' /><br/>");
