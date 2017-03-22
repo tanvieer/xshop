@@ -21,14 +21,12 @@ public class UserEditServlet extends HttpServlet{
 		  PrintWriter out = resp.getWriter();
 		  out.println("<html>");
 		  out.println("<body>");
+		  out.println("<center>");
 out.println("<a href='home'> HOME </a>");
-out.println("<a href='user-list'>Show ALL</a>");
-out.println("<a href='user-add'>Add New</a>");
+out.println("<a href='user-login'>Login</a>");
+out.println("<a href='user-add'>Registration</a>");
 
 		  out.println("<form method='post'>");
-		  //out.println("User Id:<br/><input name='id' value="+user.getUserId()+" /><br/>");
-		  //out.println("New Name:<br/><input name='n_name' value="+user.getName()+"  /><br/>");
-
 out.println("User ID:<br/><input name='uid' /><br/>");
 		  out.println("User Password:<br/><input name='pass' /><br/>");
 		  out.println("User Name:<br/><input name='name' /><br/>");
@@ -38,6 +36,7 @@ out.println("User ID:<br/><input name='uid' /><br/>");
 
 		  out.println("<input type='submit' value='Update'/>");
 		  out.println("</form>");
+		  out.println("</center>");
 		  out.println("</body>");
 		  out.println("</html>");
 	  }

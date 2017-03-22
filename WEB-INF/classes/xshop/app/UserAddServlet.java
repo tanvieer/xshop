@@ -16,8 +16,9 @@ public class UserAddServlet extends HttpServlet{
 		  PrintWriter out = resp.getWriter();
 		  out.println("<html>");
 		  out.println("<body>");
-		out.println("<a href='home'> HOME </a>");
-		out.println("<a href='user-list'>Show ALL User</a>");
+                  out.println("<center>");
+		out.println("<a href='home'> HOME </a> </br>");
+		out.println("<a href='user-login'>Login</a>");
                 out.println("<h1>Registration</h1>");
 		  out.println("<form method='post'>");
 		  out.println("User ID:<br/><input name='uid' /><br/>");
@@ -31,6 +32,7 @@ public class UserAddServlet extends HttpServlet{
 
 		  out.println("<input type='submit' value='Save'/>");
 		  out.println("</form>");
+                  out.println("</center>");
 		  out.println("</body>");
 		  out.println("</html>");
 	  }

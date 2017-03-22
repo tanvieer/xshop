@@ -6,7 +6,7 @@ import javax.servlet.http.*;
 import xshop.entity.UserInfo;
 import xshop.core.UserService;
 
-public class ChangePasswordServlet extends HttpServlet{
+public class UserChangePasswordServlet extends HttpServlet{
 	int idd;
  	String db_userid;
     String db_pass;
@@ -43,6 +43,7 @@ public class ChangePasswordServlet extends HttpServlet{
 
                 out.println("<html>");
 		  out.println("<body>");
+		  out.println("<center>");
 out.println("<a href='home'> HOME </a>");
 out.println("<h1>Change Password</h1>");
 
@@ -54,6 +55,7 @@ out.println("User ID:<br/><input name='uid' readonly value = "+db_userid+" /><br
 
 		  out.println("<input type='submit' value='Update'/>");
 		  out.println("</form>");
+		  out.println("</center>");
 		  out.println("</body>");
 		  out.println("</html>");
 

@@ -56,7 +56,7 @@ public class UserHomeServlet extends HttpServlet{
 
             out.println("<body>");
 
-            //out.println("<a href='home'> HOME </a>");
+            
              out.println("<center>");
              out.println("<h1>Welcome '"+db_name+"'</h1></br>");
              out.println("<a href='user-profile'>Profile</a></br>");

@@ -14,7 +14,7 @@ import java.util.List;
 import javax.servlet.*;  
 import javax.servlet.http.*;  
 
-public class AdminHomeServlet extends HttpServlet{
+public class UserAdminHomeServlet extends HttpServlet{
 	  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		
         PrintWriter out = resp.getWriter();

@@ -29,16 +29,18 @@ out.println("</head>");
 
 
 		  out.println("<body>");
+          out.println("<center>");
 		out.println("<a href='home'> HOME </a>");
                 out.println("<h1>Login</h1>");
 
 		  out.println("<form method='post'>");
 		  out.println("User ID:<br/><input name='uid' /><br/>");
-		  out.println("User Password:<br/><input name='pass' /><br/>");
+		  out.println("User Password:<br/><input name='pass' /><br/></br>");
 		  
 		  out.println("<input type='submit' value='Login'/>");
                   out.println("<input type='button' onClick='registration()' value='Registration'/>");
 		  out.println("</form>");
+          out.println("</center>");
 		  out.println("</body>");
 		  out.println("</html>");
           out.close();  

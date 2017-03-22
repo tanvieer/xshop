@@ -37,6 +37,7 @@ public class UserListServlet extends HttpServlet{
 			out.println("</head>");
 
 		  out.println("<body>");
+		  out.println("<center>");
 out.println("<a href='home'> HOME </a>");
 		out.println("<a href='user-add'>Registration</a>");
 
@@ -76,6 +77,7 @@ out.println("<a href='home'> HOME </a>");
 
 
 		  out.println("</form>");
+		  out.println("</center>");
 		  out.println("</body>");
 		  out.println("</html>");
 	  }

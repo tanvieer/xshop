@@ -245,11 +245,11 @@
 
 
 	  <servlet>
-			<servlet-name>AdminHomeServlet</servlet-name>
-			<servlet-class>xshop.app.AdminHomeServlet</servlet-class>
+			<servlet-name>UserAdminHomeServlet</servlet-name>
+			<servlet-class>xshop.app.UserAdminHomeServlet</servlet-class>
 	  </servlet>
 	  <servlet-mapping>
-			<servlet-name>AdminHomeServlet</servlet-name>
+			<servlet-name>UserAdminHomeServlet</servlet-name>
 			<url-pattern>/user-admin</url-pattern>
 	  </servlet-mapping>
 
@@ -266,13 +266,24 @@
 
 
 	   <servlet>
-			<servlet-name>ChangePasswordServlet</servlet-name>
-			<servlet-class>xshop.app.ChangePasswordServlet</servlet-class>
+			<servlet-name>UserChangePasswordServlet</servlet-name>
+			<servlet-class>xshop.app.UserChangePasswordServlet</servlet-class>
 	  </servlet>
 	  <servlet-mapping>
-			<servlet-name>ChangePasswordServlet</servlet-name>
+			<servlet-name>UserChangePasswordServlet</servlet-name>
 			<url-pattern>/user-changepass</url-pattern>
 	  </servlet-mapping>
+
+
+	  <servlet>
+			<servlet-name>UserProfileServlet</servlet-name>
+			<servlet-class>xshop.app.UserProfileServlet</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+			<servlet-name>UserProfileServlet</servlet-name>
+			<url-pattern>/user-profile</url-pattern>
+	  </servlet-mapping>
+
 
 
 
