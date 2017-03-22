@@ -28,6 +28,10 @@ public class HomeServlet extends HttpServlet{
 		  out.println("<td></br><input type='button' value='Show All Supplier' id='show_all_supplier' onclick='show_all_supplier()'  name='show_all_supplier'/> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</br></br></td>");
 		  out.println("<td></br><input type='button' value='Show All Product' id='show_all_product' onclick='show_all_product()'  name='show_all_product'/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</br></br></td>");
 		  out.println("</tr>");
+
+		  out.println("<tr>");	  
+		  out.println("<td></br><input type='button' value='User Login' id='login' onclick='UserLogin()'  name='login'/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</br></br></td>");
+		  out.println("</tr>");
 	
 		  out.println("</table>");
 		  out.println("</body>");
@@ -51,6 +55,7 @@ public class HomeServlet extends HttpServlet{
 		out.println("function delete_product(){document.location.href= 'product-delete'; }");
 		out.println("function edit_product(){document.location.href= 'product-edit'; }");
 		out.println("function show_all_product(){document.location.href= 'product-list'; }");
+		out.println("function UserLogin(){document.location.href= 'user-login'; }");
 
 		
 		out.println("</script>");
