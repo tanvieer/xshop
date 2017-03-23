@@ -1,4 +1,6 @@
+
 package xshop.app;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,15 +13,26 @@ import xshop.entity.UserInfo;
 import xshop.core.UserService;
 import java.util.List;
 
-import javax.servlet.*;  
-import javax.servlet.http.*;  
+import javax.servlet.*;
+import javax.servlet.http.*;
 
-public class LoginServlet extends HttpServlet{
-	  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-		  PrintWriter out = resp.getWriter();
+public class LoginServlet extends HttpServlet {
+  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+      PrintWriter out = resp.getWriter();
 
 
+ try{  
+     
+ HttpSession ssn1=req.getSession(false); 
 
+if(ssn1 != null) {
+    String u_type = (String)ssn1.getAttribute("type");
+    if(u_type.equals("Admin"))
+        resp.sendRedirect("user-admin");
+    else  if(u_type.equals("User"))
+        resp.sendRedirect("user-user");
+ }
+ else{
 
 Cookie[] cookies = req.getCookies();
 
@@ -70,55 +83,6 @@ System.out.println("login servlet cookie theke session set kora start");
 
 System.out.println("login servlet cookie theke session set kora end");
 
-/*
-
-        int d_id;
-        String d_userid;
-        String d_pass;
-        String d_name;
-        String d_type;
-
-       try{  
-  
-            resp.setContentType("text/html");   
-            //System.out.println("TEST BEFORE SESSION ON");   
-             HttpSession ssn=req.getSession(false); 
-            //System.out.println("TEST AFTER SESSION ON");  
-
-            if(session != null) {
-              System.out.println("test 1");
-                d_userid = (String)ssn.getAttribute("userid");
-              System.out.println("test 2");
-               d_id = (int)ssn.getAttribute("id");
-              System.out.println("test 3");
-                d_pass = (String)ssn.getAttribute("password");
-              System.out.println("test 4");
-                d_name = (String)ssn.getAttribute("name");
-              System.out.println("test 5");
-                d_type = (String)ssn.getAttribute("type");
-              System.out.println("test 6");
-
-
-                System.out.println("login servlet check session d_id= "+ d_id);
-                System.out.println("login servlet check session d_userid= "+ d_userid);
-                System.out.println("login servlet check session d_pass= "+ d_pass);
-                System.out.println("login servlet check session d_name= "+ d_name );
-                System.out.println("login servlet check session d_type= "+ d_type);
-              }
-            }
-            catch (Exception e){
-                System.out.println("LoginServlet sesson check exception");
-            }
-
-
-*/
-
-
-
-
-
-
-
 
 
       if(db_type.equals("Admin"))
@@ -144,109 +108,113 @@ System.out.println("login servlet cookie null paise");
 
 
 
-      		  out.println("<body>");
+            out.println("<body>");
             out.println("<center>");
-      		  out.println("<a href='home'> HOME </a>");
+            out.println("<a href='home'> HOME </a>");
             out.println("<h1>Login</h1>");
 
-      		  out.println("<form method='post'>");
-      		  out.println("User ID:<br/><input name='uid' required /><br/>");
-      		  out.println("User Password:<br/><input name='pass' required /><br/></br>");
+            out.println("<form method='post'>");
+            out.println("User ID:<br/><input name='uid' required /><br/>");
+            out.println("User Password:<br/><input name='pass' required /><br/></br>");
             out.println("<input type='checkbox' name='remember' value='remember'> Remember Me<br>");
-      		  
-      		  out.println("<input type='submit' value='Login'/>");
+            
+            out.println("<input type='submit' value='Login'/>");
                         out.println("<input type='button' onClick='registration()' value='Registration'/>");
-      		  out.println("</form>");
+            out.println("</form>");
                 out.println("</center>");
-      		  out.println("</body>");
-      		  out.println("</html>");
+            out.println("</body>");
+            out.println("</html>");
      }
+   }
+
+
   
-	  }
-	  protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-		
-        
+  }catch (Exception e){
 
-                String userid = req.getParameter("uid");
-                String pass = req.getParameter("pass");
-                String remember = req.getParameter("remember");
-           
+  }
 
-
-
-
-
-                UserService us=new UserService();
-                UserInfo user= us.getByUserId(userid);
-                PrintWriter out = resp.getWriter();
-
-System.out.println("login servlet null check");
-                if(user != null){
-                        int db_id = user.getId();
-                        String db_userid = user.getUserId();
-                        String db_pass = user.getPassword();
-                        String db_name = user.getName();
-                        String db_type = user.getUserType();
-
-                        if(pass.equals(db_pass)){
-                         try{  
-                           HttpSession session=req.getSession();  
-                                session.setAttribute("id",db_id);
-                                session.setAttribute("userid",db_userid);
-                                session.setAttribute("password",db_pass);
-                                session.setAttribute("name",db_name);
-                                session.setAttribute("type",db_type);
-  System.out.println("login servlet doPost a session add hoise");
-
-if(remember!= null){
-
-    Cookie ck=new Cookie("id",String.valueOf(db_id));//creating cookie object  
-    resp.addCookie(ck);//adding cookie in the response  
-
-    ck=new Cookie("userid",db_userid);
-    resp.addCookie(ck);
-
-    ck=new Cookie("name",db_name);
-    resp.addCookie(ck);
-
-    ck=new Cookie("type",db_type);
-    resp.addCookie(ck);
-System.out.println("login servlet doPost a cookie add hoise");
-
-/*System.out.println("login servlet array sr");
-    Cookie ckr[]=req.getCookies();  
-    for(int i=0;i<ckr.length;i++){  
-
-     System.out.println("\n\n"+ckr[i].getName()+" "+ckr[i].getValue());//printing name and value of cookie  
-    }  
-    System.out.println("login servlet array last");*/
 }
 
 
 
 
+  protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+      throws ServletException, IOException {
 
+    String userid = req.getParameter("uid");
+    String pass = req.getParameter("pass");
+    String remember = req.getParameter("remember");
 
+    UserService us = new UserService();
+    UserInfo user = us.getByUserId(userid);
+    PrintWriter out = resp.getWriter();
 
-                                out.println("Successfully logged in!!");
+    System.out.println("login servlet null check");
+    if (user != null) {
+      int db_id = user.getId();
+      String db_userid = user.getUserId();
+      String db_pass = user.getPassword();
+      String db_name = user.getName();
+      String db_type = user.getUserType();
 
-                                if(db_type.equals("Admin"))
-                                    resp.sendRedirect("user-admin");
-                                else  if(db_type.equals("User"))
-                                    resp.sendRedirect("user-user");
-                            }
-                         catch(Exception e){System.out.println(e);}  
-                        }
-                        else out.println("Password not matched!!");
-                }
-                else {
-                        
-                        out.println("Username not exist!!");
+      if (pass.equals(db_pass)) {
+        try {
+          HttpSession session = req.getSession();
+          session.setAttribute("id", db_id);
+          session.setAttribute("userid", db_userid);
+          session.setAttribute("password", db_pass);
+          session.setAttribute("name", db_name);
+          session.setAttribute("type", db_type);
+          System.out
+              .println("login servlet doPost a session add hoise");
 
-                }
+          if (remember != null) {
 
+            Cookie ck = new Cookie("id", String.valueOf(db_id));// creating
+                                      // cookie
+                                      // object
+            resp.addCookie(ck);// adding cookie in the response
 
-                 out.close();  
-                
-	  }
+            ck = new Cookie("userid", db_userid);
+            resp.addCookie(ck);
+
+            ck = new Cookie("name", db_name);
+            resp.addCookie(ck);
+
+            ck = new Cookie("type", db_type);
+            resp.addCookie(ck);
+            System.out
+                .println("login servlet doPost a cookie add hoise");
+
+            /*
+             * System.out.println("login servlet array sr"); Cookie
+             * ckr[]=req.getCookies(); for(int
+             * i=0;i<ckr.length;i++){
+             * 
+             * System.out.println("\n\n"+ckr[i].getName()+" "+ckr[i].
+             * getValue());//printing name and value of cookie }
+             * System.out.println("login servlet array last");
+             */
+          }
+
+          out.println("Successfully logged in!!");
+
+          if (db_type.equals("Admin"))
+            resp.sendRedirect("user-admin");
+          else if (db_type.equals("User"))
+            resp.sendRedirect("user-user");
+        } catch (Exception e) {
+          System.out.println(e);
+        }
+      } else
+        out.println("Password not matched!!");
+    } else {
+
+      out.println("Username not exist!!");
+
+    }
+
+    out.close();
+
+  }
 }
