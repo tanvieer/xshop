@@ -72,13 +72,13 @@ public class UserHomeServlet extends HttpServlet{
                 }
                 else {
 
-                    System.out.println("ADMIN USER NA");
+                    System.out.println(" UserHomeServlet ADMIN USER NA");
                     //out.close();  
                     resp.sendRedirect("user-logout");
                  }
             }
             else {
-                System.out.println("NULL PAISE");
+                System.out.println("UserHomeServlet NULL PAISE");
                 //out.close();  
                 resp.sendRedirect("user-logout");
             }
@@ -92,7 +92,7 @@ public class UserHomeServlet extends HttpServlet{
             System.out.println("\n\n\n");
             System.out.println(e);
 
-            System.out.println("EXCEPTION PAISE");
+            System.out.println("UserHomeServlet EXCEPTION PAISE");
 
             //out.close();  
             resp.sendRedirect("user-login");
