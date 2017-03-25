@@ -93,7 +93,7 @@ public class UserAdminHomeServlet extends HttpServlet{
             System.out.println("\n\n\n");
             System.out.println(e);
 
-            System.out.println("EXCEPTION PAISE");
+            System.out.println("UserAdminHomeServlet EXCEPTION PAISE");
 
             //out.close();  
             resp.sendRedirect("user-login");

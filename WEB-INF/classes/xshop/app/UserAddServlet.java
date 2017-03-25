@@ -46,10 +46,10 @@ public class UserAddServlet extends HttpServlet{
         String type = req.getParameter("type");
         String cpass = req.getParameter("c_pass");
 
-        System.out.println(userid);
-        System.out.println(pass);
-        System.out.println(name);
-        System.out.println(type);
+        System.out.println("UserAddServlet "+userid);
+        System.out.println("UserAddServlet "+pass);
+        System.out.println("UserAddServlet "+name);
+        System.out.println("UserAddServlet "+type);
 
         boolean check = true;
 
@@ -59,7 +59,7 @@ public class UserAddServlet extends HttpServlet{
         for(UserInfo ct:ctList){
 
         	String oldid = ct.getUserId();
-        	System.out.println("test: "+oldid);
+        	System.out.println("UserAddServlet oldid=: "+oldid);
         	if(userid.equals(oldid)){
         		check = false;
         		break;

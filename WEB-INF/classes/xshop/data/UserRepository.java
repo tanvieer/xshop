@@ -191,46 +191,4 @@ public class UserRepository {
         
     }
 
-
-
-
-
-
-
-
-/*
-    
-
-
-
- 
-
-
-
-
-
-    public boolean remove(int userId) {
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/xshopdb", "root", "");
-
-            PreparedStatement stmt = con.prepareStatement("DELETE from UserInfo WHERE id=?");
-            stmt.setInt(1, UserInfoId);
-            int result = stmt.executeUpdate();
-            con.close();
-
-            System.out.println(result);
-
-            if (result != 0) {
-                return true;
-            }
-            return false;
-
-        } catch (Exception e) {
-            System.out.print(e.getMessage());
-            return false;
-        }
-    }
-*/
-
 }
