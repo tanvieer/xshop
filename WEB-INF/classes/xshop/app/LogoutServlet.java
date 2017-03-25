@@ -7,6 +7,8 @@ public class LogoutServlet extends HttpServlet{
 	  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		  PrintWriter out = resp.getWriter();
 
+    try{
+
 
            Cookie ckr[]=req.getCookies();  
             for(int i=0;i<ckr.length;i++){  
@@ -20,7 +22,7 @@ public class LogoutServlet extends HttpServlet{
              System.out.println("LogoutServlet cookie delet hoise. length ="+ ckrp.length);//printing name and value of cookie  
             } 
 
-
+        }catch (Exception e){}
 
           HttpSession session = req.getSession(false);
             if (session != null) {

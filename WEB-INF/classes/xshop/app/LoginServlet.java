@@ -70,7 +70,20 @@ System.out.println("login servlet cookie theke session set kora start");
 
 System.out.println("login servlet cookie theke session set kora end");
 
-/*
+
+      if(db_type.equals("Admin"))
+          resp.sendRedirect("user-admin");
+      else  if(db_type.equals("User"))
+          resp.sendRedirect("user-user");
+
+  }catch(Exception e){
+        System.out.println("login servlet Cookie check a exception paise");
+  }
+} else{
+
+System.out.println("login servlet cookie null paise");
+
+
 
         int d_id;
         String d_userid;
@@ -85,7 +98,7 @@ System.out.println("login servlet cookie theke session set kora end");
              HttpSession ssn=req.getSession(false); 
             //System.out.println("TEST AFTER SESSION ON");  
 
-            if(session != null) {
+            if(ssn != null) {
               System.out.println("test 1");
                 d_userid = (String)ssn.getAttribute("userid");
               System.out.println("test 2");
@@ -104,34 +117,24 @@ System.out.println("login servlet cookie theke session set kora end");
                 System.out.println("login servlet check session d_pass= "+ d_pass);
                 System.out.println("login servlet check session d_name= "+ d_name );
                 System.out.println("login servlet check session d_type= "+ d_type);
+
+                 if(d_type.equals("Admin"))
+                      resp.sendRedirect("user-admin");
+                  else  if(d_type.equals("User"))
+                      resp.sendRedirect("user-user");
+
               }
             }
             catch (Exception e){
                 System.out.println("LoginServlet sesson check exception");
             }
 
-
-*/
-
+     
 
 
 
 
 
-
-
-
-      if(db_type.equals("Admin"))
-          resp.sendRedirect("user-admin");
-      else  if(db_type.equals("User"))
-          resp.sendRedirect("user-user");
-
-  }catch(Exception e){
-        System.out.println("login servlet Cookie check a exception paise");
-  }
-} else{
-
-System.out.println("login servlet cookie null paise");
 
       out.println("<html>");
       out.println("<head>");
@@ -200,16 +203,21 @@ System.out.println("login servlet null check");
 
 if(remember!= null){
 
-    Cookie ck=new Cookie("id",String.valueOf(db_id));//creating cookie object  
+    Cookie ck=new Cookie("id",String.valueOf(db_id));//creating cookie object 
+    ck.setMaxAge(10000); 
     resp.addCookie(ck);//adding cookie in the response  
+    
 
     ck=new Cookie("userid",db_userid);
+    ck.setMaxAge(10000); 
     resp.addCookie(ck);
 
     ck=new Cookie("name",db_name);
+    ck.setMaxAge(10000); 
     resp.addCookie(ck);
 
     ck=new Cookie("type",db_type);
+    ck.setMaxAge(10000); 
     resp.addCookie(ck);
 System.out.println("login servlet doPost a cookie add hoise");
 
